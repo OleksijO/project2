@@ -43,18 +43,7 @@ public class Task7ProcessStrategy implements ProcessStrategy {
                     });
                     words.add(new Pair(1. * counter[0] / ((Container) el).getElements().size(), el));
                 });
-//        for (Element el:((Container) elementToProcess).getAllTreeElements())
-//        {
-//            if (el.getContentType() == ContentType.WORD){
-//                int counter=0;
-//                for (Element symbol:((Container) el).getElements()){
-//                    if (vowelsPattern.matcher(symbol.getContent()).matches()) {
-//                        counter++;
-//                    }
-//                    words.add(new Pair(1. * counter / ((Container) el).getElements().size(), el));
-//                }
-//            }
-//        }
+
         Collections.sort(words, (o1, o2) -> Double.compare(o1.rate, o2.rate));
         deepWordReplace(elementToProcess, words, new int[1]);
         return elementToProcess;
