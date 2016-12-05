@@ -1,6 +1,7 @@
 package training.project2.model.entity.impl;
 
 import training.project2.model.entity.Container;
+import training.project2.model.entity.ContentType;
 import training.project2.model.entity.Element;
 import training.project2.model.entity.Type;
 
@@ -11,40 +12,51 @@ import java.util.List;
  * Created by oleksij.onysymchuk@gmail on 04.12.2016.
  */
 public class ContainerImpl implements Container {
-    protected Type type;
+    protected ContentType contentType;
     protected List<Element> elements;
 
-    public ContainerImpl(Type type, List<Element> elements) {
-        this.type = type;
+    public ContainerImpl(ContentType type, List<Element> elements) {
+        this.contentType = type;
         this.elements = elements;
     }
 
     @Override
+    public ContentType getContentType() {
+        return contentType;
+    }
+
+    @Override
     public Type getType() {
-       return type;
+        return Type.CONTAINER;
     }
 
     @Override
     public String getContent() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(contentType.separatorBefore);
         elements.forEach(el ->
                 stringBuilder
-                        .append(type.separatorBefore)
                         .append(el.getContent())
-                        .append(type.separatorAfter)
         );
+        stringBuilder.append(contentType.separatorAfter);
         return stringBuilder.toString();
     }
 
     @Override
-    public List<Element> getElements(){
+    public List<Element> getElements() {
         return elements;
     }
 
     @Override
-    public List<Element> getAllTreeElements(){
+    public List<Element> getAllTreeElements() {
         List<Element> allElements = new ArrayList<>(elements);
-        elements.forEach(element -> allElements.add(element));
+        elements.forEach(element -> {
+            if (element.getType()==Type.CONTAINER){
+                allElements.addAll(((Container)element).getAllTreeElements());
+            } else {
+                allElements.add(element);
+            }
+        });
         return allElements;
     }
 
@@ -54,7 +66,7 @@ public class ContainerImpl implements Container {
     }
 
     @Override
-    public void addElement(Element el){
+    public void addElement(Element el) {
         elements.add(el);
     }
 
@@ -65,14 +77,14 @@ public class ContainerImpl implements Container {
 
         ContainerImpl container = (ContainerImpl) o;
 
-        if (type != container.type) return false;
+        if (contentType != container.contentType) return false;
         return elements != null ? elements.equals(container.elements) : container.elements == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = type != null ? type.hashCode() : 0;
+        int result = contentType != null ? contentType.hashCode() : 0;
         result = 31 * result + (elements != null ? elements.hashCode() : 0);
         return result;
     }

@@ -2,7 +2,7 @@ package training.project2.model.cash;
 
 import training.project2.model.entity.Container;
 import training.project2.model.entity.Element;
-import training.project2.model.entity.Type;
+import training.project2.model.entity.ContentType;
 
 import java.util.List;
 
@@ -12,7 +12,8 @@ import java.util.List;
  */
 public interface EntityFactory {
 
-    Element getElement(Type type, String content);
+    Element getElement(ContentType type, char c);
 
-    Container getContainer(Type type, List<Element> elements);
+    Container getContainer(ContentType type, List<Element> elements);
+
 }

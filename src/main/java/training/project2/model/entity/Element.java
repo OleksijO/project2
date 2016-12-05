@@ -5,6 +5,8 @@ package training.project2.model.entity;
  */
 public interface Element {
 
+    ContentType getContentType();
+
     Type getType();
 
     String getContent();
