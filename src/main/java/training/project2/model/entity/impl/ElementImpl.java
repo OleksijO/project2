@@ -1,7 +1,7 @@
 package training.project2.model.entity.impl;
 
-import training.project2.model.entity.Element;
 import training.project2.model.entity.ContentType;
+import training.project2.model.entity.Element;
 import training.project2.model.entity.Type;
 
 /**

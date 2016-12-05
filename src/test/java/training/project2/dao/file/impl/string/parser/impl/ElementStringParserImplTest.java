@@ -26,7 +26,7 @@ public class ElementStringParserImplTest {
 
     @Test
     public void getCode() throws Exception {
-        String code =parser.getCode(TEST_CODE_1,0).code.getContent();
+        String code = parser.getCode(TEST_CODE_1, 0).code.getContent();
         assertEquals(TEST_CODE_1, code);
     }
 

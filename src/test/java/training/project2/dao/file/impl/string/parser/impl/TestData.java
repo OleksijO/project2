@@ -47,6 +47,6 @@ public class TestData {
             "    void addElement(Element el);\n" +
             "}\n";
 
-    public static final String TEST_TEXT = "\t" + TEST_PARAGRAPH +  TEST_CODE_1 + "\t" + TEST_PARAGRAPH +  TEST_CODE_2 +"\t"+ TEST_PARAGRAPH + TEST_CODE_1;
+    public static final String TEST_TEXT = "\t" + TEST_PARAGRAPH + TEST_CODE_1 + "\t" + TEST_PARAGRAPH + TEST_CODE_2 + "\t" + TEST_PARAGRAPH + TEST_CODE_1;
     public static final String TEXT = PARAGRAPH + "\n\t" + TEST_CODE_1 + PARAGRAPH + "\n" + TEST_CODE_2 + PARAGRAPH + TEST_CODE_1;
 }

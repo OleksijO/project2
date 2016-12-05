@@ -2,9 +2,9 @@ package training.project2.dao.file.impl;
 
 import org.junit.Before;
 import org.junit.Test;
-import training.project2.dao.file.impl.string.parser.impl.TestData;
 import training.project2.dao.ElementDao;
 import training.project2.dao.file.impl.string.parser.impl.ElementStringParserImpl;
+import training.project2.dao.file.impl.string.parser.impl.TestData;
 import training.project2.model.entity.Container;
 import training.project2.model.entity.Element;
 
@@ -19,10 +19,10 @@ import static org.junit.Assert.assertFalse;
 public class ElementFileDaoImplTest {
     private String fileName = "testfile.tmp";
     private ElementDao elementDao = new ElementDaoFileImpl(fileName);
-    private Element gaugeElement ;
+    private Element gaugeElement;
 
     @Before
-    public void init(){
+    public void init() {
         gaugeElement = new ElementStringParserImpl().getTextFromString(TestData.TEXT);
         elementDao.createElement(gaugeElement);
     }
@@ -40,9 +40,9 @@ public class ElementFileDaoImplTest {
 
     @Test
     public void updateElement() throws Exception {
-        ((Container)gaugeElement).getElements().remove(0);
+        ((Container) gaugeElement).getElements().remove(0);
         elementDao.updateElement(gaugeElement);
-        assertEquals(gaugeElement,elementDao.getElement());
+        assertEquals(gaugeElement, elementDao.getElement());
     }
 
     @Test

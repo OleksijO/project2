@@ -2,8 +2,8 @@ package training.project2.model.cash.impl;
 
 import training.project2.model.cash.EntityFactory;
 import training.project2.model.entity.Container;
-import training.project2.model.entity.Element;
 import training.project2.model.entity.ContentType;
+import training.project2.model.entity.Element;
 import training.project2.model.entity.impl.ContainerImpl;
 import training.project2.model.entity.impl.ElementImpl;
 
@@ -22,7 +22,7 @@ public class EntityFactoryImpl implements EntityFactory {
     private EntityFactoryImpl() {
     }
 
-    public static EntityFactory getInstance(){
+    public static EntityFactory getInstance() {
         return instance;
     }
 

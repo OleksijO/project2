@@ -30,7 +30,7 @@ public class ElementStringParserImpl implements ElementStringParser {
             Matcher codeMatcher = codePattern.matcher(input);
             if (codeMatcher.find(current)) {
                 if (current == codeMatcher.start()) {
-                    GetCodeResult codeResult = getCode(input, current+1);
+                    GetCodeResult codeResult = getCode(input, current + 1);
                     textContent.add(codeResult.code);
                     current = codeResult.current;
                 } else {
@@ -52,8 +52,7 @@ public class ElementStringParserImpl implements ElementStringParser {
     }
 
     /**
-     *
-     * @param string String to be parsed
+     * @param string  String to be parsed
      * @param current Parsing start position in specified string
      * @return DTO with parsed code entity and position of end of code in specified string
      */

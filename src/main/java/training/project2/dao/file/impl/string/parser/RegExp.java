@@ -16,5 +16,4 @@ public interface RegExp {
     String REGEXP_WORD_SEPARATOR = "( |,|;|:|\\-)";
 
 
-
 }

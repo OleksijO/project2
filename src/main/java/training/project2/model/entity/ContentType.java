@@ -6,14 +6,14 @@ package training.project2.model.entity;
  * @author oleksij.onysymchuk@gmail
  */
 public enum ContentType {
-    TEXT("",""),                    // list of PARAGRAPHs and CODEs
-    PARAGRAPH("\t","\n"),           // list of SENTENCEs
-    SENTENCE("",""),                // list of WORDs, MARKs and END_SENTENCE_MARK at the end of list
-    WORD(" ",""),                   // list of SYMBOLs
-    CODE("","\n"),                  // everything starts with package, import, public, protected, class
-    SYMBOL("",""),                  // everything but new row, tab, mark, end sentence mark.
-    MARK(""," "),                   // , ; : -
-    END_SENTENCE_MARK(""," ");      // . ! ?
+    TEXT("", ""),                    // list of PARAGRAPHs and CODEs
+    PARAGRAPH("\t", "\n"),           // list of SENTENCEs
+    SENTENCE("", ""),                // list of WORDs, MARKs and END_SENTENCE_MARK at the end of list
+    WORD(" ", ""),                   // list of SYMBOLs
+    CODE("", "\n"),                  // everything starts with package, import, public, protected, class
+    SYMBOL("", ""),                  // everything but new row, tab, mark, end sentence mark.
+    MARK("", " "),                   // , ; : -
+    END_SENTENCE_MARK("", " ");      // . ! ?
 
     /**
      * Symbol, which is used in string representation (by call getContent() method)

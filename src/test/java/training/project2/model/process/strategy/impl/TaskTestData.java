@@ -4,7 +4,7 @@ package training.project2.model.process.strategy.impl;
  * Created by oleksij.onysymchuk@gmail on 05.12.2016.
  */
 public class TaskTestData {
-    public static final String TEST_1 ="\t zzzAzzz, zzzAzz zzzAz, A zA Azzz, zAz ";
+    public static final String TEST_1 = "\t zzzAzzz, zzzAzz zzzAz, A zA Azzz, zAz ";
     public static final String TEST_2 = "" +
             "\t- There is a beautiful evening!\n" +
             "\t - Is not it?\n" +

@@ -59,8 +59,8 @@ public class ContainerImpl implements Container {
     public List<Element> getAllTreeElements() {
         List<Element> allElements = new ArrayList<>(elements);
         elements.forEach(element -> {
-            if (element.getType()==Type.CONTAINER){
-                allElements.addAll(((Container)element).getAllTreeElements());
+            if (element.getType() == Type.CONTAINER) {
+                allElements.addAll(((Container) element).getAllTreeElements());
             } else {
                 allElements.add(element);
             }
