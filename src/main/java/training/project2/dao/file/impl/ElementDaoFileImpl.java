@@ -2,8 +2,8 @@ package training.project2.dao.file.impl;
 
 import org.apache.commons.io.FileUtils;
 import training.project2.dao.ElementDao;
-import training.project2.dao.string.parser.ElementStringParser;
-import training.project2.dao.string.parser.impl.ElementStringParserImpl;
+import training.project2.dao.file.impl.string.parser.ElementStringParser;
+import training.project2.dao.file.impl.string.parser.impl.ElementStringParserImpl;
 import training.project2.model.entity.Element;
 
 import java.io.File;
@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This is implementation of elemnt entity DAO for file storage.
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public class ElementDaoFileImpl implements ElementDao {
     public static final String SPECIFIED_INPUT_SOURCE_FILE_DOES_NOT_EXIST_FORMAT = "Specified input source file '%s' does not exist!";

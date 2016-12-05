@@ -4,12 +4,21 @@ import training.project2.model.entity.Element;
 import training.project2.model.process.strategy.ProcessStrategy;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 05.12.2016.
+ * This interface describes element processor for processing elements with specified strategy
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public interface ElementProcessor {
 
+    /**
+     * @param elementToProcess element entity has to be processed
+     * @return processed element entity
+     */
     Element process(Element elementToProcess);
 
+    /**
+     * @param strategy strategy implementation for processing element entity
+     */
     void setStrategy(ProcessStrategy strategy);
 
 }

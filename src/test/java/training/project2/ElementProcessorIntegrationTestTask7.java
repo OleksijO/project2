@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import training.project2.dao.ElementDao;
 import training.project2.dao.file.impl.ElementDaoFileImpl;
-import training.project2.dao.string.parser.impl.ElementStringParserImpl;
+import training.project2.dao.file.impl.string.parser.impl.ElementStringParserImpl;
 import training.project2.model.entity.Element;
 import training.project2.model.process.ElementProcessor;
 import training.project2.model.process.impl.ElementProcessorImpl;

@@ -1,9 +1,11 @@
 package training.project2.model.entity;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This enum determines all the types in Element hierarchy
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public enum Type {
-    ELEMENT,
-    CONTAINER
+    ELEMENT,    //contains one char
+    CONTAINER   //contains tree of containers and elements
 }

@@ -1,14 +1,25 @@
 package training.project2.model.entity;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This interface describes element entity behaviour
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public interface Element {
 
+    /**
+     * @return content type of entity
+     */
     ContentType getContentType();
 
+    /**
+     * @return type of element in Element hierarchy (similar to getClass)
+     */
     Type getType();
 
+    /**
+     * @return String representation of content
+     */
     String getContent();
 
 }

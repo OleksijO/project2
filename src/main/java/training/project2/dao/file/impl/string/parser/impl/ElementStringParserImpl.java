@@ -1,7 +1,7 @@
-package training.project2.dao.string.parser.impl;
+package training.project2.dao.file.impl.string.parser.impl;
 
-import training.project2.dao.string.parser.ElementStringParser;
-import training.project2.model.RegExp;
+import training.project2.dao.file.impl.string.parser.ElementStringParser;
+import training.project2.dao.file.impl.string.parser.RegExp;
 import training.project2.model.cash.EntityFactory;
 import training.project2.model.cash.impl.EntityFactoryImpl;
 import training.project2.model.entity.ContentType;
@@ -13,7 +13,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This is imp[lementation of string to element entity parser.
+ * It uses entity factory to decrease constant memory usage.
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public class ElementStringParserImpl implements ElementStringParser {
     Pattern codePattern = Pattern.compile(RegExp.REGEXP_CODE_START);
@@ -48,6 +51,12 @@ public class ElementStringParserImpl implements ElementStringParser {
         return factory.getContainer(ContentType.TEXT, textContent);
     }
 
+    /**
+     *
+     * @param string String to be parsed
+     * @param current Parsing start position in specified string
+     * @return DTO with parsed code entity and position of end of code in specified string
+     */
     GetCodeResult getCode(String string, int current) {
         GetCodeResult codeResult = new GetCodeResult();
         List<Element> elements = new ArrayList<>();
@@ -72,11 +81,24 @@ public class ElementStringParserImpl implements ElementStringParser {
         return codeResult;
     }
 
+    /**
+     * DTO for getCode method
+     */
     static class GetCodeResult {
+        /**
+         * position of end of code in specified string arg of method
+         */
         int current;
+        /**
+         * parsed code entity
+         */
         Element code;
     }
 
+    /**
+     * @param string String value to parsed to paragraph entity list
+     * @return paragraph entity list
+     */
     List<Element> getParagraphs(String string) {
         String[] stringParagraphs = string.trim().split(RegExp.REGEXP_PARAGRAPH_SEPARATOR);
         List<Element> paragraphs = new ArrayList<>();
@@ -91,6 +113,10 @@ public class ElementStringParserImpl implements ElementStringParser {
         return paragraphs;
     }
 
+    /**
+     * @param string String value to parsed to sentence entity list
+     * @return sentence entity list
+     */
     List<Element> getSentences(String string) {
         String[] sents = string.replace("\\t|\\n|\\r", "").trim().split(RegExp.REGEXP_SENTENCE_SEPARATOR);
         int current = 0;
@@ -112,6 +138,10 @@ public class ElementStringParserImpl implements ElementStringParser {
         return sentences;
     }
 
+    /**
+     * @param string String value to parsed to words entity list
+     * @return words entity list
+     */
     List<Element> getWords(String string) {
         String[] stringWords = string.trim().split(RegExp.REGEXP_WORD_SEPARATOR);
         int current = 0;
@@ -138,6 +168,10 @@ public class ElementStringParserImpl implements ElementStringParser {
 
     }
 
+    /**
+     * @param word String value to parsed to symbols entity list
+     * @return symbols entity list
+     */
     List<Element> getSymbols(String word) {
         List<Element> symbols = new ArrayList<>();
         for (int i = 0; i < word.length(); i++) {

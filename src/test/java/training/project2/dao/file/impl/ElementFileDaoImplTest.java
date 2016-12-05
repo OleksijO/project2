@@ -2,9 +2,9 @@ package training.project2.dao.file.impl;
 
 import org.junit.Before;
 import org.junit.Test;
-import training.project2.dao.string.parser.impl.TestData;
+import training.project2.dao.file.impl.string.parser.impl.TestData;
 import training.project2.dao.ElementDao;
-import training.project2.dao.string.parser.impl.ElementStringParserImpl;
+import training.project2.dao.file.impl.string.parser.impl.ElementStringParserImpl;
 import training.project2.model.entity.Container;
 import training.project2.model.entity.Element;
 

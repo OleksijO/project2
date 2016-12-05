@@ -9,10 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This class represent implementation of container entity
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public class ContainerImpl implements Container {
+    /**
+     * holder for content type value
+     */
     protected ContentType contentType;
+    /**
+     * holder for child elements
+     */
     protected List<Element> elements;
 
     public ContainerImpl(ContentType type, List<Element> elements) {
@@ -58,16 +66,6 @@ public class ContainerImpl implements Container {
             }
         });
         return allElements;
-    }
-
-    @Override
-    public void setElements(List<Element> elements) {
-        this.elements = elements;
-    }
-
-    @Override
-    public void addElement(Element el) {
-        elements.add(el);
     }
 
     @Override

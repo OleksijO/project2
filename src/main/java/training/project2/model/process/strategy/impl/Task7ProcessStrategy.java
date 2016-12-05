@@ -1,7 +1,5 @@
 package training.project2.model.process.strategy.impl;
 
-import training.project2.model.cash.EntityFactory;
-import training.project2.model.cash.impl.EntityFactoryImpl;
 import training.project2.model.entity.Container;
 import training.project2.model.entity.ContentType;
 import training.project2.model.entity.Element;
@@ -17,21 +15,24 @@ import java.util.regex.Pattern;
 import static training.project2.model.entity.Type.ELEMENT;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 05.12.2016.
+ * This class represents process element strategy for task 7.
+ * Rearrange words in text by increasing weight og vowels in the word.
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public class Task7ProcessStrategy implements ProcessStrategy {
     private static final String REGEXP_VOWELS = "(?i)[aeiouяиюэоаыуеїієё]";
     private Pattern vowelsPattern = Pattern.compile(REGEXP_VOWELS);
-    private EntityFactory factory = EntityFactoryImpl.getInstance();
 
     public Element performProcess(Element elementToProcess) {
-
+        // holder for all pairs of vowels rate and word in text
         List<Pair> words = new ArrayList<>();
 
         if (elementToProcess.getType() == ELEMENT) {
             return elementToProcess;
         }
 
+        // getting all words in text to temp holder with calculationg of vowels rate in word
         ((Container) elementToProcess).getAllTreeElements().stream()
                 .filter(element -> element.getContentType() == ContentType.WORD)
                 .forEach(el -> {
@@ -44,8 +45,12 @@ public class Task7ProcessStrategy implements ProcessStrategy {
                     words.add(new Pair(1. * counter[0] / ((Container) el).getElements().size(), el));
                 });
 
+        // performing sort by vowels rate
         Collections.sort(words, (o1, o2) -> Double.compare(o1.rate, o2.rate));
+
+        // replacing every word in text by one from sorted holder sequentially
         deepWordReplace(elementToProcess, words, new int[1]);
+
         return elementToProcess;
 
     }
@@ -66,6 +71,9 @@ public class Task7ProcessStrategy implements ProcessStrategy {
         }
     }
 
+    /**
+     * container for sorting words
+     */
     class Pair {
         double rate;
         Element word;

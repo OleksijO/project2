@@ -5,10 +5,18 @@ import training.project2.model.entity.ContentType;
 import training.project2.model.entity.Type;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This class represent implementation of element entity
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public class ElementImpl implements Element {
+    /**
+     * content holder
+     */
     private char content;
+    /**
+     * holder for content type value
+     */
     private ContentType type;
 
     public ElementImpl(ContentType type, char content) {

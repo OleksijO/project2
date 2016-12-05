@@ -2,8 +2,8 @@ package training.project2.model.process.strategy.impl;
 
 import org.junit.Assert;
 import org.junit.Test;
-import training.project2.dao.string.parser.ElementStringParser;
-import training.project2.dao.string.parser.impl.ElementStringParserImpl;
+import training.project2.dao.file.impl.string.parser.ElementStringParser;
+import training.project2.dao.file.impl.string.parser.impl.ElementStringParserImpl;
 import training.project2.model.entity.Element;
 
 /**

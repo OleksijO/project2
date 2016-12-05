@@ -3,15 +3,21 @@ package training.project2.model.entity;
 import java.util.List;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This interface describes container entity behaviour
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public interface Container extends Element {
 
+    /**
+     * @return only list of direct child elements in container
+     */
     List<Element> getElements();
 
+    /**
+     * @return list of all hierarchy of child elements:
+     * in order: 1st child, children of 1st child with their children..., 2nd child, children of 2nc child with etc..
+     */
     List<Element> getAllTreeElements();
 
-    void setElements(List<Element> elements);
-
-    void addElement(Element el);
 }

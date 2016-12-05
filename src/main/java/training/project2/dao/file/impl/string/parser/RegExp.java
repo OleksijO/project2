@@ -1,7 +1,9 @@
-package training.project2.model;
+package training.project2.dao.file.impl.string.parser;
 
 /**
- * Created by oleksij.onysymchuk@gmail on 04.12.2016.
+ * This holder for regular expressions, which are used in parsing element entitis from strings
+ *
+ * @author oleksij.onysymchuk@gmail
  */
 public interface RegExp {
     String REGEXP_PARAGRAPH = "\\t[^\\t]+";

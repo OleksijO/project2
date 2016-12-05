@@ -1,4 +1,4 @@
-package training.project2.dao.string.parser.impl;
+package training.project2.dao.file.impl.string.parser.impl;
 
 import org.junit.Test;
 import training.project2.model.cash.EntityFactory;
@@ -8,7 +8,7 @@ import training.project2.model.entity.Element;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static training.project2.dao.string.parser.impl.TestData.*;
+import static training.project2.dao.file.impl.string.parser.impl.TestData.*;
 
 /**
  * Created by oleksij.onysymchuk@gmail on 04.12.2016.

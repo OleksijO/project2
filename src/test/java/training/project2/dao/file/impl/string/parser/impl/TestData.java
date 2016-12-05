@@ -1,4 +1,4 @@
-package training.project2.dao.string.parser.impl;
+package training.project2.dao.file.impl.string.parser.impl;
 
 /**
  * Created by oleksij.onysymchuk@gmail on 05.12.2016.
